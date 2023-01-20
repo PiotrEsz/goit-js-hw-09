@@ -1,3 +1,9 @@
+import flatpickr from 'flatpickr';
+
+import 'flatpickr/dist/flatpickr.min.css';
+
+import Notiflix from 'notiflix';
+
 function createPromise(position, delay) {
   const shouldResolve = Math.random() > 0.3;
   if (shouldResolve) {
