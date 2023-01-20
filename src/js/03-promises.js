@@ -1,6 +1,4 @@
-import flatpickr from 'flatpickr';
-
-import 'flatpickr/dist/flatpickr.min.css';
+'use strict';
 
 import Notiflix from 'notiflix';
 
