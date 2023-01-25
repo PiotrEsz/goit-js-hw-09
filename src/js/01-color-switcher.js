@@ -13,8 +13,8 @@ buttonStart.addEventListener('click', () => {
   changeColors = setInterval(() => {
     document.body.style.backgroundColor = getRandomHexColor();
   }, 1000);
-  btnStart.setAttribute('disabled', '');
-  btnStop.removeAttribute('disabled');
+  buttonStart.setAttribute('disabled', '');
+  buttonStop.removeAttribute('disabled');
 });
 
 buttonStop.addEventListener('click', () => {

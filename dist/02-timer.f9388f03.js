@@ -510,12 +510,12 @@ var _flatpickrMinCss = require("flatpickr/dist/flatpickr.min.css");
 var _notiflix = require("notiflix");
 var _notiflixDefault = parcelHelpers.interopDefault(_notiflix);
 "use strict";
-const btnStart = document.querySelector("[data-start]");
+const buttonStart = document.querySelector("[data-start]");
 const dayTimer = document.querySelector("[data-days");
 const hourTimer = document.querySelector("[data-hours");
 const minuteTimer = document.querySelector("[data-minutes");
 const secondTimer = document.querySelector("[data-seconds");
-btnStart.disabled = true;
+buttonStart.disabled = true;
 let ms;
 const options = {
     enableTime: true,
@@ -527,12 +527,12 @@ const options = {
         let timeDifference = pickedDate - new Date().getTime();
         if (timeDifference <= 0) {
             (0, _notiflixDefault.default).Notify.warning("Please choose a date in the future.");
-            btnStart.disabled = true;
+            buttonStart.disabled = true;
         } else {
-            btnStart.disabled = false;
-            btnStart.addEventListener("click", ()=>{
+            buttonStart.disabled = false;
+            buttonStart.addEventListener("click", ()=>{
                 countdownTimer(pickedDate);
-                btnStart.disabled = true;
+                buttonStart.disabled = true;
             });
         }
     }

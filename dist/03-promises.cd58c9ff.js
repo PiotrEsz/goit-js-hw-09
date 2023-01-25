@@ -507,9 +507,9 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 var _notiflix = require("notiflix");
 var _notiflixDefault = parcelHelpers.interopDefault(_notiflix);
 "use strict";
-const formData = document.querySelector("form");
-const firstDelay = document.querySelector('[name="delay"]');
-const delayStep = document.querySelector('[name="step"]');
+const form = document.querySelector("form");
+const delayValue = document.querySelector('[name="delay"]');
+const stepValue = document.querySelector('[name="step"]');
 const amount = document.querySelector('[name="amount"]');
 function createPromise(position, delay) {
     return new Promise((resolve, reject)=>{
@@ -528,9 +528,9 @@ function createPromise(position, delay) {
         }, delay);
     });
 }
-formData.addEventListener("submit", (event)=>{
+form.addEventListener("submit", (event)=>{
     event.preventDefault();
-    let delay1 = parseInt(firstDelay.value);
+    let delay1 = parseInt(delayValue.value);
     for(let i = 1; i <= amount.value; i++){
         createPromise(i, delay1).then(({ position , delay  })=>{
             // console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
@@ -539,7 +539,7 @@ formData.addEventListener("submit", (event)=>{
             // console.log(`❌ Rejected promise ${position} in ${delay}ms`);
             (0, _notiflixDefault.default).Notify.failure(`❌ Rejected promise ${position} in ${delay}ms`);
         });
-        delay1 = delay1 + parseInt(delayStep.value);
+        delay1 = delay1 + parseInt(stepValue.value);
     }
 });
 
